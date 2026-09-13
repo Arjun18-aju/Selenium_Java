@@ -1,0 +1,29 @@
+# Maven build output
+target/
+
+# Compiled Java files
+*.class
+
+# TestNG output
+test-output/
+
+# Probe / temporary files
+Probe*
+probe*
+
+# Logs
+*.log
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
