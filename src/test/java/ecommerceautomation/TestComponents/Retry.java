@@ -1,4 +1,4 @@
-package rahulshettyacademy.TestComponents;
+package ecommerceautomation.TestComponents;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

@@ -1,4 +1,4 @@
-package rahulshettyacademy.resources;
+package ecommerceautomation.resources;
 
 import java.io.IOException;
 import java.io.InputStream;

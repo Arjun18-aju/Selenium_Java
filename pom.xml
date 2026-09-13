@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>rahulshettyacademy</groupId>
+  <groupId>ecommerceautomation</groupId>
   <artifactId>SeleniumFrameworkDesign</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
@@ -49,11 +49,11 @@
 </dependency>
 
 
-<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 <dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.0.9</version>
+     <groupId>io.qameta.allure</groupId>
+     <artifactId>allure-testng</artifactId>
+     <version>2.29.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -207,6 +207,15 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-maven</artifactId>
+          <version>2.15.2</version>
+          <configuration>
+            <reportVersion>2.29.0</reportVersion>
+            <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>

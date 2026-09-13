@@ -17,3 +17,4 @@ Feature: Purchase the order from Ecommerce Website
       | name            | password          | productName |
       | ${username}     | ${password}       | ZARA COAT 3 |
       | ${username}     | ${password}       | ADIDAS ORIGINAL |
+

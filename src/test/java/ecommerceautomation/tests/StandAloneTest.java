@@ -1,4 +1,4 @@
-package rahulshettyacademy.tests;
+package ecommerceautomation.tests;
 
 import java.time.Duration;
 import java.util.List;
@@ -10,10 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import rahulshettyacademy.pageobjects.LandingPage;
+import ecommerceautomation.pageobjects.LandingPage;
 
 public class StandAloneTest {
 
@@ -45,8 +45,9 @@ public class StandAloneTest {
 		driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 		
 		List <WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));		
+	SoftAssert softAssert = new SoftAssert();
 	Boolean match = 	cartProducts.stream().anyMatch(cartProduct-> cartProduct.getText().equalsIgnoreCase(productName));
-	Assert.assertTrue(match);
+	softAssert.assertTrue(match, "Product not found in cart");
 	driver.findElement(By.cssSelector(".totalRow button")).click();
 	
 	Actions a = new Actions(driver);
@@ -58,7 +59,8 @@ public class StandAloneTest {
 	driver.findElement(By.cssSelector(".action__submit")).click();
 	
 	String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
-	Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+	softAssert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."), "Confirmation message mismatch");
+	softAssert.assertAll();
 	driver.close();
 	
 	
